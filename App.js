@@ -8,7 +8,7 @@ import {
   Platform,
   Button
 } from "react-native";
-import { BleManager, Device, BleError, LogLevel } from "react-native-ble-plx";
+import { BleManager, Device, BleError, LogLevel, ScanMode } from "react-native-ble-plx";
 
 type Props = {};
 
@@ -43,7 +43,8 @@ export default class App extends Component<Props, State> {
       manager.startDeviceScan(
         null,
         {
-          allowDuplicates: true
+          allowDuplicates: true,
+          scanMode: ScanMode.Opportunistic
         },
         (error, device) => {
           if (error) {
