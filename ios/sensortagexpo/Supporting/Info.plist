@@ -9,7 +9,7 @@
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.cierpliwy.sensortagexpo</string>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -23,7 +23,7 @@
 		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>exp7df55998ab684740b672970333f47378</string>
+				<string>expdc3e937b7bbd42218571db6e670aafc6</string>
 			</array>
 		</dict>
 		<dict>
@@ -31,7 +31,7 @@
 			<string>OAuthRedirect</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.cierpliwy.sensortagexpo</string>
+				<string>SensorTagExpo</string>
 			</array>
 		</dict>
 	</array>

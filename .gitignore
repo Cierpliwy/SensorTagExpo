@@ -1,4 +1,14 @@
 node_modules/**/*
 .expo/*
 npm-debug.*
-ios/Pods/*
+*.jks
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+web-build/
+web-report/
+android/.idea/**/*
+android/.gradle/**/*
+android/app/build/**/*
+ios/Pods/**/*

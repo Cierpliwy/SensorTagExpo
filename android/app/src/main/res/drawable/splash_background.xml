@@ -3,6 +3,6 @@
 
     <item android:drawable="@color/splashBackground"/>
 
-    <item><bitmap android:gravity="center" android:src="@drawable/shell_launch_background_image" /></item>
+    
 
 </layer-list>

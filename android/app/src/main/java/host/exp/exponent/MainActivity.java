@@ -1,19 +1,21 @@
 package host.exp.exponent;
 
+import android.annotation.TargetApi;
+import android.os.Build;
 import android.os.Bundle;
 
 import com.facebook.react.ReactPackage;
+import com.facebook.react.modules.core.PermissionAwareActivity;
+import com.facebook.react.modules.core.PermissionListener;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
+import org.unimodules.core.interfaces.Package;
+
 import java.util.List;
 
-import expo.core.interfaces.Package;
-import host.exp.exponent.generated.DetachBuildConstants;
 import host.exp.exponent.experience.DetachActivity;
+import host.exp.exponent.generated.DetachBuildConstants;
 
-public class MainActivity extends DetachActivity {
+public class MainActivity extends DetachActivity implements PermissionAwareActivity {
 
   @Override
   public String publishedUrl() {
@@ -26,19 +28,13 @@ public class MainActivity extends DetachActivity {
   }
 
   @Override
-  public List<String> sdkVersions() {
-    return new ArrayList<>(Arrays.asList("30.0.0"));
-  }
-
-  @Override
   public List<ReactPackage> reactPackages() {
     return ((MainApplication) getApplication()).getPackages();
   }
 
   @Override
   public List<Package> expoPackages() {
-    // Here you can add your own packages.
-    return super.expoPackages();
+    return ((MainApplication) getApplication()).getExpoPackages();
   }
 
   @Override
@@ -50,5 +46,11 @@ public class MainActivity extends DetachActivity {
   public Bundle initialProps(Bundle expBundle) {
     // Add extra initialProps here
     return expBundle;
+  }
+
+  @TargetApi(Build.VERSION_CODES.M)
+  @Override
+  public void requestPermissions(String[] permissions, int requestCode, PermissionListener listener) {
+    requestPermissions(permissions, requestCode);
   }
 }
